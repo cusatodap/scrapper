@@ -36,7 +36,7 @@ session_start();
   <!-- Before login --> 
 <div class="container">
 <h1>Login with Facebook</h1>
-           Not Connected
+           Not Connected, please click to 
 <div> <a href="fbconfig.php">Login with Facebook</a></div>
       </div>
          <?php endif ?>
