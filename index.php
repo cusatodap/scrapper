@@ -37,8 +37,8 @@ session_start();
 <h1>Login with Facebook</h1>
            Not Connected
 <div> <a href="fbconfig.php">Login with Facebook</a></div>
-	 <!-- <div> <a href="http://www.krizna.com/general/login-with-facebook-using-php/"  title="Login with facebook">View Post</a>
-	  </div> -->
+	 <div> <a href="http://www.krizna.com/general/login-with-facebook-using-php/"  title="Login with facebook">View Post</a>
+	  </div>
       </div>
     <?php endif ?>
   </body>
