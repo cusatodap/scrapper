@@ -14,7 +14,8 @@ session_start();
 <div class="hero-unit">
   <h1>Hello <?php echo $_SESSION['FULLNAME']; ?></h1>
   <p>Thanks a lot for participating in our program.</p>
-  <p>All the data we have scrapped from your profile has been listed below. We assure you it shall not be made public.</p>
+  <p>All the data we have gathered from your profile has been listed below. We assure you it shall not be made public.</p>
+  <p>This data will be used for academic research purposes only.</p>
   <p>You may click the logout button to return to facebook.</p>
   </div>
 <div class="span4">
@@ -30,16 +31,12 @@ session_start();
 <li><?php echo $_SESSION['EMAIL']; ?></li>
 <i><?php var_dump($_SESSION) ?><i>
 <div><a href="logout.php">Logout</a></div>
-</ul></div></div>
-    <?php else: ?>     <!-- Before login --> 
+</ul>
+  <!-- Before login --> 
 <div class="container">
 <h1>Login with Facebook</h1>
            Not Connected
-<div>
-      <a href="fbconfig.php">Login with Facebook</a></div>
-	 <div> <a href="http://www.krizna.com/general/login-with-facebook-using-php/"  title="Login with facebook">View Post</a>
-	  </div>
+<div> <a href="fbconfig.php">Login with Facebook</a></div>
       </div>
-    <?php endif ?>
   </body>
 </html>
