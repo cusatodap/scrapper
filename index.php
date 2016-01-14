@@ -32,6 +32,7 @@ session_start();
 <i><?php var_dump($_SESSION) ?><i>
 <div><a href="logout.php">Logout</a></div>
 </ul>
+    <?php else: ?>   
   <!-- Before login --> 
 <div class="container">
 <h1>Login with Facebook</h1>
