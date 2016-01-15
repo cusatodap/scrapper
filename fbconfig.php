@@ -40,7 +40,7 @@ if ( isset( $session ) ) {
         $_SESSION['FULLNAME'] = $fbfullname;
 	    $_SESSION['EMAIL'] =  $femail;
     /* ---- header location after session ----*/
-  header("Location: https://apps.facebook.com/cusatodap/");
+  header("Location: index.php");
 } else {
   $loginUrl = $helper->getLoginUrl();
  header("Location: ".$loginUrl);
