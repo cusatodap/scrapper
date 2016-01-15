@@ -27,19 +27,36 @@ try {
 // see if we have a session
 if ( isset( $session ) ) {
   // graph api request for user data
-  $request = new FacebookRequest( $session, 'GET', '/me' );
+  $request = new FacebookRequest(
+  $session,
+  'GET',
+  '/me',
+  array(
+    'fields' => 'id,name,birthday,education,email,political,gender'
+  )
+);
   $response = $request->execute();
   // get response
   $graphObject = $response->getGraphObject();
 
      	$fbid = $graphObject->getProperty('id');              // To Get Facebook ID
- 	    $fbfullname = $graphObject->getProperty('name'); // To Get Facebook full name
-	    $femail = $graphObject->getProperty('email');    // To Get Facebook email ID
+ 	$fbfullname = $graphObject->getProperty('name'); // To Get Facebook full name
+        $femail = $graphObject->getProperty('email');    // To Get Facebook email ID
+        $fbirthday = $graphObject->getProperty('birthday');//birthday
+	$feducation = $graphObject->getProperty('education'); //array education
+        $fpolitical = $graphObject->getProperty('political');//
+        $fgender = $graphObject->getProperty('gender');//
+
 	/* ---- Session Variables -----*/
-	    $_SESSION['FBID'] = $fbid;           
+        $_SESSION['FBID'] = $fbid;           
         $_SESSION['FULLNAME'] = $fbfullname;
-	    $_SESSION['EMAIL'] =  $femail;
-    /* ---- header location after session ----*/
+        $_SESSION['EMAIL'] =  $femail;
+	$_SESSION['BIRTHDAY'] =  $fbirthday;
+ 	$_SESSION['EDUCATION'] =  $feducation;
+ 	$_SESSION['POLITICAL'] =  $fpolitical;
+ 	$_SESSION['GENDER'] =  $fgender;
+     
+/* ---- header location after session ----*/
   header("Location: index.php");
 } else {
   $loginUrl = $helper->getLoginUrl();
