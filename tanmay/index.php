@@ -1,15 +1,16 @@
 <?php
-
-// Working canvas APP, FB SDK 4.0
-session_start();
- 
-// Load SDK Assets
-require_once __DIR__ . '/facebook-sdk-v5/autoload.php';
-
+session_start(); 
+?>
+require_once __DIR__ . '/vendor/autoload.php';
+$fb = new Facebook\Facebook([
+  'app_id' => '1687233988161207',
+  'app_secret' => '15c0aa4edbd65f6a01ee26a9c07575c6',
+  'default_graph_version' => 'v2.5',
+]);
 $app_id = '1687233988161207';
 $app_secret = '15c0aa4edbd65f6a01ee26a9c07575c6';
 $app_namespace = 'cusatodap';
-$app_scope = 'name,id,age_range,gender,user_location,email,political';
+$app_scope = 'user_location,email';
 
 
 // Facebook APP keys
@@ -17,6 +18,8 @@ FacebookSession::setDefaultApplication($app_id,$app_secret);
 
 // Helper for fb canvas authentication
 $helper = new FacebookCanvasLoginHelper();
+
+
 
 // see if  $_SESSION exists
 if (isset($_SESSION) && isset($_SESSION['fb_token']))
@@ -83,5 +86,3 @@ else
 	// IF bug is fixed this line won't be needed, as app will ask for permissions onload without JS redirect.
 	$oauthJS = "window.top.location = 'https://www.facebook.com/dialog/oauth?client_id=$app_id&redirect_uri=https://apps.facebook.com/$app_namespace/&scope=$app_scope';";
 }
-
-?>
