@@ -1,46 +1,47 @@
 <?php
 session_start(); 
 ?>
-<!doctype html>
-<html xmlns:fb="http://www.facebook.com/2008/fbml">
-  <head>
-    <title>Login with Facebook</title>
-<link href="https://www.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet"> 
- </head>
-  <body>
-  <?php if ($_SESSION['FBID']): ?>      <!--  After user login  -->
+<?php 
+// Load SDK Assets
+require_once __DIR__ . '/vendor/autoload.php';
+// Minimum required
 
-<div class="container">
-<div class="hero-unit">
-  <h1>Hello <?php echo $_SESSION['FULLNAME']; ?></h1>
-  <p>Thanks a lot for participating in our program.</p>
-  <p>All the data we have gathered from your profile has been listed below. We assure you it shall not be made public.</p>
-  <p>This data will be used for academic research purposes only.</p>
-  <p>You may click the logout button to return to facebook.</p>
-  </div>
-<div class="span4">
- <ul class="nav nav-list">
-<li class="nav-header">Image</li>
-	<li><img src="https://graph.facebook.com/<?php echo $_SESSION['FBID']; ?>/picture"></li>
+$fb = new Facebook\Facebook([
+  'app_id' => '1687233988161207',
+  'app_secret' => '15c0aa4edbd65f6a01ee26a9c07575c6',
+  'default_graph_version' => 'v2.5',
+]);
+$app_id = '1687233988161207';
+$app_secret = '15c0aa4edbd65f6a01ee26a9c07575c6';
+$app_namespace = 'cusatodap';
+$app_scope = 'user_location,email';
 
-<li class="nav-header">Facebook ID</li>
-<li><?php echo  $_SESSION['FBID']; ?></li>
-<li class="nav-header">Facebook fullname</li>
-<li><?php echo $_SESSION['FULLNAME']; ?></li>
-<li class="nav-header">Facebook Email</li>
-<li><?php echo $_SESSION['EMAIL']; ?></li>
-<i><?php var_dump($_SESSION) ?><i>
-<div><a href="logout.php">Logout</a></div>
-</ul>
-    <?php else: ?>   
-  <!-- Before login --> 
-<div class="container">
-<h1>Login with Facebook</h1>
-           Not Connected, please click to 
-<div> <a href="fbconfig.php">Login with Facebook</a></div>
-      </div>
-         <?php endif ?>
-  </body>
-</html>
+ echo "Hello";
+$canvasHelper = $fb->getCanvasHelper();
 
+try {
+  $accessToken = $canvasHelper->getAccessToken();
+} catch(Facebook\Exceptions\FacebookResponseException $e) {
+  // When Graph returns an error
+  echo 'Graph returned an error: ' . $e->getMessage();
+} catch(Facebook\Exceptions\FacebookSDKException $e) {
+  // When validation fails or other local issues
+  echo 'Facebook SDK returned an error: ' . $e->getMessage();
+}
 
+if (isset($accessToken)) {
+  // Logged in.
+	// Lets save fb_token for later authentication through saved $_SESSION
+	$_SESSION['fb_token'] = $accessToken;
+
+	// Logged in
+	$fb_me = (new FacebookRequest(
+	  $accessToken, 'GET', '/me'
+	))->execute()->getGraphObject();
+
+	// We can get some info about the user
+	$fb_location_name = $fb_me->getProperty('location')->getProperty('name');
+	$fb_email = $fb_me->getProperty('email');
+	$fb_uuid = $fb_me->getProperty('id');
+}
+ ?>
