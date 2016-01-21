@@ -46,23 +46,23 @@ if (isset($accessToken)) {
 	echo "logged in";
 	// Lets save fb_token for later authentication through saved $_SESSION
 	$_SESSION['fb_token'] = $accessToken;
-	$fb_me = new FacebookRequest(
- 	 $accessToken,
- 	 'GET',
-  	'/me',
-  	array(
-    	'fields' => 'id,name,birthday,education,email,political,gender'
-  	)
-	);
+	try {
+  	// Returns a `Facebook\FacebookResponse` object
+ 	 $response = $fb->get('/me?fields=id,name', '$accessToken');
+	} 
+	catch(Facebook\Exceptions\FacebookResponseException $e) {
+  	echo 'Graph returned an error: ' . $e->getMessage();
+  	exit;
+	} 
+	catch(Facebook\Exceptions\FacebookSDKException $e) {
+ 	 echo 'Facebook SDK returned an error: ' . $e->getMessage();
+  	exit;
+	}
 
-	
-	// Logged in
+	$user = $response->getGraphUser();
 
-	var_dump($fb_me);
-	// We can get some info about the user
-	//$fb_location_name = $fb_me->getProperty('location')->getProperty('name');
-	$fb_email = $fb_me->getProperty('email');
-	$fb_uuid = $fb_me->getProperty('id');
-	echo $fb_uuid;
-}
+	echo 'Name: ' . $user['name'];
+	// OR
+	// echo 'Name: ' . $user->getName()	;
+	}
  ?>
