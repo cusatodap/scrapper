@@ -70,8 +70,8 @@ if (isset($accessToken)) {
 	// echo 'Name: ' . $user->getName()	;
 	}
 	else{
-	$loginUrl = $facebook->getLoginUrl(array('redirect_uri' => $fbconfig['appUrl']));
- 	print "&gt;script>top.location.href = '$loginUrl';</script>"; &gt;
+	$loginUrl = $fb->getLoginUrl(array('redirect_uri' => $fbconfig['appUrl']));
+ 	print "<script>top.location.href = '$loginUrl'</script>"; 
 	} 
 ?>
 
