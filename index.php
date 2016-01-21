@@ -65,7 +65,9 @@ if (isset($accessToken)) {
 	echo '  id: '.$user['id'];
 	echo 'Education:'.$user['education'];
 	echo 'email: '.$user['email'];
-	// OR
+	echo 'gender:'.$user['gender'];
+	echo 'political; '.$user['political'];
+// OR
 	// echo 'Name: ' . $user->getName()	;
 	}
  ?>
