@@ -70,7 +70,7 @@ if (isset($accessToken)) {
 	// echo 'Name: ' . $user->getName()	;
 	}
 	else{
-	$loginUrl = $fb->getLoginUrl(array('redirect_uri' => $fbconfig['appUrl']));
+	$loginUrl = $canvasHelper->getLoginUrl(array('redirect_uri' => $fbconfig['appUrl']));
  	print "<script>top.location.href = '$loginUrl'</script>"; 
 	} 
 ?>
