@@ -16,22 +16,21 @@ use Facebook\GraphObject;
 use Facebook\Entities\AccessToken;
 use Facebook\HttpClients\FacebookCurlHttpClient;
 use Facebook\HttpClients\FacebookHttpable;
-
+$fbconfig['appUrl']="scrapper.odap.cf";
 $fb = new Facebook\Facebook([
   'app_id' => '1687233988161207',
   'app_secret' => '15c0aa4edbd65f6a01ee26a9c07575c6',
   'default_graph_version' => 'v2.5',
 ]);
-$app_id = '1687233988161207';
-$app_secret = '15c0aa4edbd65f6a01ee26a9c07575c6';
 $app_namespace = 'cusatodap';
-$app_scope = 'user_location,email';
 
- echo "Hello";
+
+
 $canvasHelper = $fb->getCanvasHelper();
 
 try {
   $accessToken = $canvasHelper->getAccessToken();
+  $_SESSION['fb_token'] = $accessToken;
 } catch(Facebook\Exceptions\FacebookResponseException $e) {
   // When Graph returns an error
   echo 'Graph returned an error: ' . $e->getMessage();
@@ -45,7 +44,7 @@ if (isset($accessToken)) {
 	var_dump($accessToken);
 	echo "logged in";
 	// Lets save fb_token for later authentication through saved $_SESSION
-	$_SESSION['fb_token'] = $accessToken;
+//	$_SESSION['fb_token'] = $accessToken;
 	try {
   	// Returns a `Facebook\FacebookResponse` object
  	 $response = $fb->get('/me?fields=id,name,hometown,birthday,education,email,political,gender', $accessToken);
@@ -70,4 +69,9 @@ if (isset($accessToken)) {
 // OR
 	// echo 'Name: ' . $user->getName()	;
 	}
- ?>
+	else{
+	$loginUrl = $facebook->getLoginUrl(array('redirect_uri' => $fbconfig['appUrl']));
+ 	print "&gt;script>top.location.href = '$loginUrl';</script>"; &gt;
+	} 
+?>
+
