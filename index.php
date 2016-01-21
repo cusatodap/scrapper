@@ -60,7 +60,6 @@ if (isset($accessToken)) {
 	}
 
 	$user = $response->getGraphUser();
-	echo 'Public profile: '.$user['public_profile'].'\n\n';
 	echo 'Name: ' . $user['name'];
 	echo '  id: '.$user['id'];
 	echo 'Education:'.$user['education'];
