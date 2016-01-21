@@ -42,16 +42,21 @@ try {
 
 if (isset($accessToken)) {
   // Logged in.
+	echo "logged in";
 	// Lets save fb_token for later authentication through saved $_SESSION
 	$_SESSION['fb_token'] = $accessToken;
+	$fb_me = new FacebookRequest(
+ 	 $accessToken,
+ 	 'GET',
+  	'/me',
+  	array(
+    	'fields' => 'id,name,birthday,education,email,political,gender'
+  	)
+	);
+
 	
 	// Logged in
-	$fb_me = (new FacebookRequest(
-	  $accessToken, 'GET', '/me'
-	,array(
-    'fields' => 'id,name,birthday,education,email,political,gender'
-  )
-))->execute()->getGraphObject();
+
 	var_dump($fb_me);
 	// We can get some info about the user
 	//$fb_location_name = $fb_me->getProperty('location')->getProperty('name');
