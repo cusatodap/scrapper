@@ -33,7 +33,7 @@ if (isset($accessToken)) {
   // Logged in.
 	// Lets save fb_token for later authentication through saved $_SESSION
 	$_SESSION['fb_token'] = $accessToken;
-
+	echo "abc";
 	// Logged in
 	$fb_me = (new FacebookRequest(
 	  $accessToken, 'GET', '/me'
