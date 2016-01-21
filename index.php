@@ -43,5 +43,6 @@ if (isset($accessToken)) {
 	$fb_location_name = $fb_me->getProperty('location')->getProperty('name');
 	$fb_email = $fb_me->getProperty('email');
 	$fb_uuid = $fb_me->getProperty('id');
+	echo $fb_uuid;
 }
  ?>
