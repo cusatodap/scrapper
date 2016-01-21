@@ -42,6 +42,7 @@ try {
 
 if (isset($accessToken)) {
   // Logged in.
+	var_dump($accessToken);
 	echo "logged in";
 	// Lets save fb_token for later authentication through saved $_SESSION
 	$_SESSION['fb_token'] = $accessToken;
