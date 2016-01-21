@@ -25,7 +25,7 @@ $fb = new Facebook\Facebook([
 $app_namespace = 'cusatodap';
 
 
-$helper = $fb->getRedirectLoginHelper();
+$helper = $fb->getRedirectLoginHelper(https://scrapper.odap.cf/index.php);
 $canvasHelper = $fb->getCanvasHelper();
 
 try {
