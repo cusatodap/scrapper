@@ -70,7 +70,7 @@ if (isset($accessToken)) {
 	// echo 'Name: ' . $user->getName()	;
 	}
 	else{
-	$helper = $fb->getRedirectLoginHelper("https://scrapper.odap.cf/index.php");
+	$helper = $fb->getRedirectLoginHelper("http://scrapper.odap.cf/index.php");
 	$loginUrl = $helper->getLoginUrl();
  	header("Location: ".$loginUrl); 
 	} 
