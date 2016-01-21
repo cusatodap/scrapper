@@ -72,7 +72,7 @@ if (isset($accessToken)) {
 	else{
 	$helper = $fb->getRedirectLoginHelper("https://scrapper.odap.cf/index.php");
 	$loginUrl = $helper->getLoginUrl();
- 	print "<script>top.location.href = '$loginUrl'</script>"; 
+ 	header("Location: ".$loginUrl); 
 	} 
 ?>
 
