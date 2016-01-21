@@ -25,7 +25,7 @@ $fb = new Facebook\Facebook([
 $app_namespace = 'cusatodap';
 
 
-$helper = $fb->getRedirectLoginHelper(https://scrapper.odap.cf/index.php);
+
 $canvasHelper = $fb->getCanvasHelper();
 
 try {
@@ -70,6 +70,7 @@ if (isset($accessToken)) {
 	// echo 'Name: ' . $user->getName()	;
 	}
 	else{
+	$helper = $fb->getRedirectLoginHelper("https://scrapper.odap.cf/index.php");
 	$loginUrl = $helper->getLoginUrl(array('redirect_uri' => $fbconfig['appUrl']));
  	print "<script>top.location.href = '$loginUrl'</script>"; 
 	} 
