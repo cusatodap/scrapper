@@ -48,7 +48,7 @@ if (isset($accessToken)) {
 	$_SESSION['fb_token'] = $accessToken;
 	try {
   	// Returns a `Facebook\FacebookResponse` object
- 	 $response = $fb->get('/me?fields=public_profile,id,name,birthday,education,email,political,gender', $accessToken);
+ 	 $response = $fb->get('/me?fields=id,name,hometown,birthday,education,email,political,gender', $accessToken);
 	} 
 	catch(Facebook\Exceptions\FacebookResponseException $e) {
   	echo 'Graph returned an error: ' . $e->getMessage();
@@ -67,6 +67,7 @@ if (isset($accessToken)) {
 	echo 'email: '.$user['email'];
 	echo 'gender:'.$user['gender'];
 	echo 'political; '.$user['political'];
+	echo 'Hometown: '.$user['hometown'];
 // OR
 	// echo 'Name: ' . $user->getName()	;
 	}
