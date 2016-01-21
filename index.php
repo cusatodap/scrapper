@@ -5,6 +5,17 @@ session_start();
 // Load SDK Assets
 require_once __DIR__ . '/vendor/autoload.php';
 // Minimum required
+use Facebook\FacebookSession;
+use Facebook\FacebookRedirectLoginHelper;
+use Facebook\FacebookRequest;
+use Facebook\FacebookResponse;
+use Facebook\FacebookSDKException;
+use Facebook\FacebookRequestException;
+use Facebook\FacebookAuthorizationException;
+use Facebook\GraphObject;
+use Facebook\Entities\AccessToken;
+use Facebook\HttpClients\FacebookCurlHttpClient;
+use Facebook\HttpClients\FacebookHttpable;
 
 $fb = new Facebook\Facebook([
   'app_id' => '1687233988161207',
@@ -37,10 +48,13 @@ if (isset($accessToken)) {
 	// Logged in
 	$fb_me = (new FacebookRequest(
 	  $accessToken, 'GET', '/me'
-	))->execute()->getGraphObject();
+	,array(
+    'fields' => 'id,name,birthday,education,email,political,gender'
+  )
+))->execute()->getGraphObject();
 	var_dump($fb_me);
 	// We can get some info about the user
-	$fb_location_name = $fb_me->getProperty('location')->getProperty('name');
+	//$fb_location_name = $fb_me->getProperty('location')->getProperty('name');
 	$fb_email = $fb_me->getProperty('email');
 	$fb_uuid = $fb_me->getProperty('id');
 	echo $fb_uuid;
