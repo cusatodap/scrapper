@@ -16,7 +16,7 @@ use Facebook\GraphObject;
 use Facebook\Entities\AccessToken;
 use Facebook\HttpClients\FacebookCurlHttpClient;
 use Facebook\HttpClients\FacebookHttpable;
-$fbconfig['appUrl']="scrapper.odap.cf";
+$fbconfig['appUrl']="scrapper.odap.cf/index.php";
 $fb = new Facebook\Facebook([
   'app_id' => '1687233988161207',
   'app_secret' => '15c0aa4edbd65f6a01ee26a9c07575c6',
@@ -70,9 +70,9 @@ if (isset($accessToken)) {
 	// echo 'Name: ' . $user->getName()	;
 	}
 	else{
-	$helper = $fb->getRedirectLoginHelper("http://scrapper.odap.cf/index.php");
-	$loginUrl = $helper->getLoginUrl();
- 	header("Location: ".$loginUrl); 
+	
+	$loginUrl = $fb->getLoginUrl(array('redirect_uri' => $fbconfig['appUrl']));
+	header("Location: ".$loginUrl); 
 	} 
 ?>
 
