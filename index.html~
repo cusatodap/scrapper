@@ -77,11 +77,11 @@ FB.getLoginStatus(function(response) {
 <div id="Name"></div>
 <div id="email"></div>
 <div id="age"></div>
-<div id="pv"></div>
-<div id="hometown"></div>
-<div id="rel"></div>
 <div id="gender"></div>
+<div id="hometown"></div>
 <div id="education"></div>
+<div id="pv"></div>
+<div id="rel"></div>
 <div id="thanks"></div>
 
 </p>
