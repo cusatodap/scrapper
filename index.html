@@ -60,7 +60,7 @@ FB.getLoginStatus(function(response) {
     // Otherwise, show Login dialog first.
     FB.login(function(response) {
       onLogin(response);
-    }, {scope: 'user_friends, email,user_religion_politics,user_hometown,education'});
+    }, {scope: 'user_friends, email,user_religion_politics,user_hometown,user_education_history'});
   }
 });
   };
