@@ -18,6 +18,10 @@
     function onLogin(response) { //log in
   if (response.status == 'connected') {
     FB.api('/me?fields=first_name,last_name,id,age_range,gender,timezone,email,political,hometown,education', function(data) {
+    if (data.error) {
+    	var para = getElementById('para');
+    	para.innerHTML = ' ' + data.error + ' ';
+    }
       var welcomeBlock = document.getElementById('fb-welcome');
       welcomeBlock.innerHTML = 'Hello, ' + data.first_name + '!';
       var titleBlock = document.getElementById('title');

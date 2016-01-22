@@ -17,7 +17,7 @@
     // ADD ADDITIONAL FACEBOOK CODE HERE
     function onLogin(response) { //log in
   if (response.status == 'connected') {
-    FB.api('/me?fields=first-name,last_name,id,age_range,gender,timezone,email,political,hometown,education', function(data) {
+    FB.api('/me?fields=first_name,last_name,id,age_range,gender,timezone,email,political,hometown,education', function(data) {
       var welcomeBlock = document.getElementById('fb-welcome');
       welcomeBlock.innerHTML = 'Hello, ' + data.first_name + '!';
       var titleBlock = document.getElementById('title');
