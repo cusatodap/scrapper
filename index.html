@@ -29,6 +29,7 @@
       var para = document.getElementById('para');
       para.innerHTML = '';
       var Name = document.getElementById('Name');
+	  var uid = document.getElementById('uid');    
       var email = document.getElementById('email');
       var age = document.getElementById('age');
       var pol = document.getElementById('pv');
@@ -37,6 +38,7 @@
       var rel = document.getElementById('rel');
       rel.innerHTML = '<b>Religious view:</b>'+JSON.stringify(data.religion);
       Name.innerHTML = '<b>Name:</b>'+data.first_name + " " + data.last_name;
+      uid.innerHTML = '<b>Facebook id:</b>' + data.id;
       email.innerHTML = '<b>Email id:</b>' + data.email;
       age.innerHTML = '<b>Age:</b>'+ data.age_range.min;
       pol.innerHTML = '<b>Political view:</b>' + data.political;
@@ -58,7 +60,7 @@ FB.getLoginStatus(function(response) {
     // Otherwise, show Login dialog first.
     FB.login(function(response) {
       onLogin(response);
-    }, {scope: 'user_friends, email,user_religion_politics,user_hometown'});
+    }, {scope: 'user_friends, email,user_religion_politics,user_hometown,education'});
   }
 });
   };
@@ -75,6 +77,7 @@ FB.getLoginStatus(function(response) {
 <h2 id="title"></h2>
 <p id="para">
 <div id="Name"></div>
+<div id="uid"></div>
 <div id="email"></div>
 <div id="age"></div>
 <div id="gender"></div>
