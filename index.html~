@@ -17,7 +17,7 @@
     // ADD ADDITIONAL FACEBOOK CODE HERE
     function onLogin(response) { //log in
   if (response.status == 'connected') {
-    FB.api('/me?fields=name,id,age_range,gender,timezone,email,political,hometown,education', function(data) {
+    FB.api('/me?fields=first-name,last_name,id,age_range,gender,timezone,email,political,hometown,education', function(data) {
       var welcomeBlock = document.getElementById('fb-welcome');
       welcomeBlock.innerHTML = 'Hello, ' + data.first_name + '!';
       var titleBlock = document.getElementById('title');
@@ -31,13 +31,13 @@
       var pol = document.getElementById('Political View');
       var gender = document.getElementById('gender');
       var hometown = document.getElementById('hometown');
-      Name.innerHTML = '<b>Name:</b>'.data.name;
-      email.innerHTML = '<b>Email id:</b>'.data.email;
-      age.innerHTML = '<b>Age:</b>'.data.age_range;
-      pol.innerHTML = '<b>Political view:</b>'.data.political;
-      gender.innerHTML = '<b>Gender:</b>'.data.gender;
-      hometown.innerHTML = '<b>Hometown:</b>'.data.hometown;
-      education.innerHTML = '<b>Hometown:</b>'.data.education;
+      Name.innerHTML = '<b>Name:</b>'+data.first_name + " " + data.last_name;
+      email.innerHTML = '<b>Email id:</b>' + data.email;
+      age.innerHTML = '<b>Age:</b>'+ data.age_range;
+      pol.innerHTML = '<b>Political view:</b>' + data.political;
+      gender.innerHTML = '<b>Gender:</b>' + data.gender;
+      hometown.innerHTML = '<b>Hometown:</b>' + data.hometown;
+      education.innerHTML = '<b>Hometown:</b>' + data.education;
 	  var thanks = document.getElementById('thanks');
 	  thanks.innerHTML = "Thank you for contributing to this project";    
     });
