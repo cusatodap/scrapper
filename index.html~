@@ -10,19 +10,39 @@
     FB.init({
       appId      : '1687233988161207',
       xfbml      : true,
+      cookie	 : true,
       version    : 'v2.5'
     });
 
     // ADD ADDITIONAL FACEBOOK CODE HERE
     function onLogin(response) { //log in
   if (response.status == 'connected') {
-    FB.api('/me?fields=first_name', function(data) {
+    FB.api('/me?fields=name,id,age_range,gender,timezone,email,political,hometown,education', function(data) {
       var welcomeBlock = document.getElementById('fb-welcome');
       welcomeBlock.innerHTML = 'Hello, ' + data.first_name + '!';
+      var titleBlock = document.getElementById('title');
+      titleBlock.innerHTML = 'Welcome to CUSAT\'s Open Data Anonymization Project! We have gathered the following data, 
+      							which will be used for Academic research purposes';
+      var para = document.getElementById('para');
+      para.innerHTML = '';
+      var Name = document.getElementById('name');
+      var email = document.getElementById('email');
+      var age = document.getElementById('age');
+      var pol = document.getElementById('Political View');
+      var gender = document.getElementById('gender');
+      var hometown = document.getElementById('hometown');
+      Name.innerHTML = '<b>Name:</b>'.data.name;
+      email.innerHTML = '<b>Email id:</b>'.data.email;
+      age.innerHTML = '<b>Age:</b>'.data.age_range;
+      pol.innerHTML = '<b>Political view:</b>'.data.political;
+      gender.innerHTML = '<b>Gender:</b>'.data.gender;
+      hometown.innerHTML = '<b>Hometown:</b>'.data.hometown;
+      education.innerHTML = '<b>Hometown:</b>'.data.education;
+	  var thanks = document.getElementById('thanks');
+	  thanks.innerHTML = "Thank you for contributing to this project";    
     });
   }
 }
-
 FB.getLoginStatus(function(response) {
   // Check login status on load, and if the user is
   // already logged in, go directly to the welcome message.
@@ -32,7 +52,7 @@ FB.getLoginStatus(function(response) {
     // Otherwise, show Login dialog first.
     FB.login(function(response) {
       onLogin(response);
-    }, {scope: 'user_friends, email'});
+    }, {scope: 'user_friends, email,user_religion_politics,user_hometown'});
   }
 });
   };
@@ -46,5 +66,16 @@ FB.getLoginStatus(function(response) {
    }(document, 'script', 'facebook-jssdk'));
 </script>
 <h1 id="fb-welcome"></h1>
+<h2 id="title"></h2>
+<p id="para">
+<div id="Name"></div>
+<div id="email"></div>
+<div id="age"></div>
+<div id="Political view"></div>
+<div id="hometown"></div>
+<div id="gender"></div>
+<div id="education"></div>
+<div id="thanks"></div>
+</p>
 </body>
 </html>
