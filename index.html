@@ -31,12 +31,12 @@
       var Name = document.getElementById('Name');
       var email = document.getElementById('email');
       var age = document.getElementById('age');
-      var pol = document.getElementById('Political View');
+      var pol = document.getElementById('pv');
       var gender = document.getElementById('gender');
       var hometown = document.getElementById('hometown');
       Name.innerHTML = '<b>Name:</b>'+data.first_name + " " + data.last_name;
       email.innerHTML = '<b>Email id:</b>' + data.email;
-      age.innerHTML = '<b>Age:</b>'+ data.age_range;
+      age.innerHTML = '<b>Age:</b>'+ data.age_range.min;
       pol.innerHTML = '<b>Political view:</b>' + data.political;
       gender.innerHTML = '<b>Gender:</b>' + data.gender;
       hometown.innerHTML = '<b>Hometown:</b>' + data.hometown;
@@ -74,7 +74,7 @@ FB.getLoginStatus(function(response) {
 <div id="Name"></div>
 <div id="email"></div>
 <div id="age"></div>
-<div id="Political view"></div>
+<div id="pv"></div>
 <div id="hometown"></div>
 <div id="gender"></div>
 <div id="education"></div>

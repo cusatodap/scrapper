@@ -18,6 +18,10 @@
     function onLogin(response) { //log in
   if (response.status == 'connected') {
     FB.api('/me?fields=first_name,last_name,id,age_range,gender,timezone,email,political,hometown,education', function(data) {
+    if (data.error) {
+    	var para = getElementById('para');
+    	para.innerHTML = ' ' + data.error + ' ';
+    }
       var welcomeBlock = document.getElementById('fb-welcome');
       welcomeBlock.innerHTML = 'Hello, ' + data.first_name + '!';
       var titleBlock = document.getElementById('title');
@@ -27,7 +31,7 @@
       var Name = document.getElementById('Name');
       var email = document.getElementById('email');
       var age = document.getElementById('age');
-      var pol = document.getElementById('Political View');
+      var pol = document.getElementById('pv');
       var gender = document.getElementById('gender');
       var hometown = document.getElementById('hometown');
       Name.innerHTML = '<b>Name:</b>'+data.first_name + " " + data.last_name;
@@ -70,7 +74,7 @@ FB.getLoginStatus(function(response) {
 <div id="Name"></div>
 <div id="email"></div>
 <div id="age"></div>
-<div id="Political view"></div>
+<div id="pv"></div>
 <div id="hometown"></div>
 <div id="gender"></div>
 <div id="education"></div>
