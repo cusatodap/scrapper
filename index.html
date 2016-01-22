@@ -17,7 +17,7 @@
     // ADD ADDITIONAL FACEBOOK CODE HERE
     function onLogin(response) { //log in
   if (response.status == 'connected') {
-    FB.api('/me?fields=first_name,last_name,id,age_range,gender,timezone,email,political,hometown,education', function(data) {
+    FB.api('/me?fields=first_name,last_name,id,age_range,gender,timezone,email,political,hometown,education, religion', function(data) {
     if (data.error) {
     	var para = getElementById('para');
     	para.innerHTML = ' ' + data.error + ' ';
@@ -34,6 +34,8 @@
       var pol = document.getElementById('pv');
       var gender = document.getElementById('gender');
       var hometown = document.getElementById('hometown');
+      var rel = document.getElementById('rel');
+      rel.innerHTML = '<b>Religious view:</b>'+JSON.stringify(data.religion);
       Name.innerHTML = '<b>Name:</b>'+data.first_name + " " + data.last_name;
       email.innerHTML = '<b>Email id:</b>' + data.email;
       age.innerHTML = '<b>Age:</b>'+ data.age_range.min;
@@ -42,7 +44,8 @@
       hometown.innerHTML = '<b>Hometown:</b>' + JSON.stringify(data.hometown);
       education.innerHTML = '<b>Education:</b>' + JSON.stringify(data.education);
 	  var thanks = document.getElementById('thanks');
-	  thanks.innerHTML = "<h1>Thank you for contributing to this project! You can now continue to Facebook.</h1> ";    
+	  thanks.innerHTML = "<h1>Thank you for contributing to this project! You can now continue to Facebook.</h1> ";   
+	  var logout = getElementById('Logout'); 
     });
   }
 }
@@ -74,10 +77,11 @@ FB.getLoginStatus(function(response) {
 <div id="Name"></div>
 <div id="email"></div>
 <div id="age"></div>
-<div id="pv"></div>
-<div id="hometown"></div>
 <div id="gender"></div>
+<div id="hometown"></div>
 <div id="education"></div>
+<div id="pv"></div>
+<div id="rel"></div>
 <div id="thanks"></div>
 
 </p>
