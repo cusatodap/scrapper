@@ -30,7 +30,7 @@ Welcome to CUSAT ODAP
 
 <div class="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="true" data-auto-logout-link="true">
 <?php
-echo '<a href="' . $loginUrl . '">Log in with Facebook!</a>';
+echo '<a href="' . $loginUrl . '">Log in with Fb!</a>';
 ?>
 </div>
 </body>
