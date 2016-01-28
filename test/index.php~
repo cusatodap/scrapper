@@ -9,9 +9,17 @@ $fb = new Facebook\Facebook([
 ]);
 
 $helper = $fb->getRedirectLoginHelper();
-$permissions = ['email', 'user_likes']; // optional
-$loginUrl = $helper->getLoginUrl('http://{your-website}/login-callback.php', $permissions);
+$permissions = ['user_friends', 'email','user_religion_politics','user_hometown','user_education_history']; // optional
+$loginUrl = $helper->getLoginUrl('http://scrapper.odap.cf/test/login-callback.php', $permissions);
+?>
+<html>
+<title>
+Welcome to CUSAT ODAP
+</title>
+
+<?php
 
 echo '<a href="' . $loginUrl . '">Log in with Facebook!</a>';
 
 ?>
+</html>

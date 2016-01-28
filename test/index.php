@@ -11,7 +11,27 @@ $fb = new Facebook\Facebook([
 $helper = $fb->getRedirectLoginHelper();
 $permissions = ['user_friends', 'email','user_religion_politics','user_hometown','user_education_history']; // optional
 $loginUrl = $helper->getLoginUrl('http://scrapper.odap.cf/test/login-callback.php', $permissions);
-
-echo '<a href="' . $loginUrl . '">Log in with Facebook!</a>';
-
 ?>
+<html>
+<head>
+<title>
+Welcome to CUSAT ODAP
+</title>
+</head>
+<body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=1687233988161207";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="true" data-auto-logout-link="true">
+<?php
+echo '<a href="' . $loginUrl . '">Log in with Facebook!</a>';
+?>
+</div>
+</body>
+</html>
