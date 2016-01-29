@@ -12,7 +12,7 @@ session_start();
 <div class="container">
 <div class="hero-unit">
   <h1>Hello <?php echo $_SESSION['USERNAME']; ?></h1>
-  <p>Welcome to "facebook login" tutorial</p>
+  <p>Welcome to CUSAT ODAP</p>
   </div>
 <div class="span4">
  <ul class="nav nav-list">
