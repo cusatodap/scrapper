@@ -28,8 +28,9 @@ Welcome to CUSAT ODAP
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-<div class="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="true" data-auto-logout-link="true">
+<div class="fb-login-button" data-max-rows="2" data-size="large" data-show-faces="true" data-auto-logout-link="true">
 <?php
+header("Location:https://scrapper.odap.cf/test/login-callback.php");
 //echo '<a href="' . $loginUrl . '">Log in with Fb!</a>';
 ?>
 </div>
