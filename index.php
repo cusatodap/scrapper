@@ -9,7 +9,7 @@
     <meta name="author" content="tanmay" >
     <link rel="icon" href="favicon.ico">
 
-    <title>Theme Template for Bootstrap</title>
+    <title>CUSAT ODAP</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -67,7 +67,7 @@
 
 
       <div class="page-header">
-        <h1>Buttons</h1>
+        <h1>Hi <?php echo $_SESSION['first_name']; ?></h1>
       </div>
       <p>
         
