@@ -16,7 +16,7 @@ use Facebook\HttpClients\FacebookCurlHttpClient;
 use Facebook\HttpClients\FacebookHttpable;
 */
 // init app with app id and secret
-$fbconfig['appUrl']="scrapper.odap.cf/index.php";
+$fbconfig['appUrl']="https://scrapper.odap.cf/fbconfig.php";
 $fb = new Facebook\Facebook([
   'app_id' => '1687233988161207',
   'app_secret' => '15c0aa4edbd65f6a01ee26a9c07575c6',
