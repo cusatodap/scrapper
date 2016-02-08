@@ -168,7 +168,8 @@ function () {
       </br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>   
       <div id = "contact" class="container">
 		<div class="row">
-		<div class="col-md-12">      
+		<div class="col-md-12">
+		<h2> Contact Us</h2>      
       Email us at : tkpandey@hotmail.com</div></div>
 	  <div class="row">
 	  <div class="col-md-12">      
