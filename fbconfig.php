@@ -24,7 +24,7 @@ $fb = new Facebook\Facebook([
 ]);
 // login helper with redirect_uri
 $helper = $fb->getRedirectLoginHelper();
-    //$helper = new FacebookRedirectLoginHelper('http://scrapper.odap.cf/fbconfig.php' );
+   
 try {
   $accessToken = $helper->getAccessToken();
 } catch(Facebook\Exceptions\FacebookResponseException $e) {
@@ -108,7 +108,7 @@ $graphObject = $response->getGraphObject();
 /* ---- header location after session ----*/
   header("Location: index.php");
 } else {
-  $permissions = ['id','name','birthday','education','email','political','gender','hometown']; // Optional permissions
+  $permissions = ['user_friends', 'email','user_religion_politics','user_hometown','user_education_history']; // Optional permissions
   $loginUrl = $helper->getLoginUrl('https://scrapper.odap.cf/fbconfig.php',$permissions);
  header("Location: ".$loginUrl);
 }
