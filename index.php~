@@ -166,10 +166,16 @@ function () {
          
          
       </br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>   
-      <div id = "contact">
-      Email us at : tkpandey@hotmail.com
-      Phone: +918893474813
-      University website: <a href="www.cusat.ac.in">cusat.ac.in</a>
+      <div id = "contact" class="container">
+		<div class="row">
+		<div class="col-md-12">      
+      Email us at : tkpandey@hotmail.com</div></div>
+	  <div class="row">
+	  <div class="col-md-12">      
+      Phone: +918893474813 </div></div>
+      <div class="row">
+	  <div class="col-md-12"> 
+      University website: <a href="www.cusat.ac.in">cusat.ac.in</a> </div></div>
       </div>
   </body>
 </html>
