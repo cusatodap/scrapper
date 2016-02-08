@@ -139,9 +139,12 @@ session_start();
   <!-- Before login --> 
 	<div class="container theme-showcase">
 	<div class="jumbotron">
+	<h1>Welcome to CUSAT Open Data Anonymization Project</h1>
+        <p> This project is intended to gather data for academic research purposes only. </br> There is no business use of this data.</p>
 	<h1>Login with Facebook</h1>
            Not Connected, please click to 
 	<div> <a href="fbconfig.php">Login with Facebook</a></div>
+	<button type="button" class="btn btn-lg btn-primary">Primary</button>
     </div>
     </div>
          <?php endif ?>
