@@ -60,10 +60,10 @@ function () {
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
+            <li class="active"><a href="./index.php">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
-            
+            <li><a href="privacy_policy.html">Privacy Policy</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -154,7 +154,7 @@ function () {
 	<div class="col-md-9" ><h1>Welcome to CUSAT </br> Open Data Anonymization Project</h1> </div> 
 	</div>
         <p> This project is intended to gather data for academic research purposes only. </br> There is no business use of this data.</p>
-	<h1>Login with Facebook</h1>
+	<h2>Login with Facebook</h2>
            Not Connected, please click to 
 <!--	<div> <a href="fbconfig.php">Login with Facebook</a></div> -->
 	<button type="button" class="btn btn-lg btn-primary" onclick="loginredir()">Login with Facebook</button>
@@ -162,5 +162,14 @@ function () {
     </div>
     </div>
          <?php endif ?>
+         
+         
+         
+      </br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>   
+      <div id = "contact">
+      Email us at : tkpandey@hotmail.com
+      Phone: +918893474813
+      University website: <a href="www.cusat.ac.in">cusat.ac.in</a>
+      </div>
   </body>
 </html>

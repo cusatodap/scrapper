@@ -60,10 +60,10 @@ function () {
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
+            <li class="active"><a href="./index.php">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
-            
+            <li><a href="privacy_policy.html">Privacy Policy</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -75,7 +75,7 @@ function () {
 	<div class="row">      
       <div class="jumbotron">
 		<div class="col-md-3"><img src="cusatlogo.jpg"></div>      
-        <div class="col-md-3"><h1>Welcome to CUSAT </br><h2>Open Data Anonymization Project</h2></h1></div> </div>
+        <div class="col-md-3"><h1>Welcome to CUSAT </br>Open Data Anonymization Project</h1></div> </div>
         <p> This project is intended to gather data for academic research purposes only. </br> There is no business use of this data.</p>
       </div>
 
@@ -151,10 +151,10 @@ function () {
 	<div class="jumbotron">
 	<div class="row">
 	<div class="col-md-3"><img src="cusatlogo.jpg"></div>
-	<div class="col-md-9" ><h1>Welcome to CUSAT </br><h2> Open Data Anonymization Project</h2></h1> </div> 
+	<div class="col-md-9" ><h1>Welcome to CUSAT </br> Open Data Anonymization Project</h1> </div> 
 	</div>
         <p> This project is intended to gather data for academic research purposes only. </br> There is no business use of this data.</p>
-	<h1>Login with Facebook</h1>
+	<h2>Login with Facebook</h2>
            Not Connected, please click to 
 <!--	<div> <a href="fbconfig.php">Login with Facebook</a></div> -->
 	<button type="button" class="btn btn-lg btn-primary" onclick="loginredir()">Login with Facebook</button>
@@ -162,5 +162,12 @@ function () {
     </div>
     </div>
          <?php endif ?>
+         
+         
+         
+      </br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>   
+      <div id = "contact">
+      
+      </div>
   </body>
 </html>
