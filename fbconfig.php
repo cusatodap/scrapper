@@ -23,7 +23,7 @@ $fb = new Facebook\Facebook([
   'default_graph_version' => 'v2.5',
 ]);
 // login helper with redirect_uri
-$helper = $fb->getRedirectLoginHelper();
+$helper = $fb->getRedirectLoginHelper('http://scrapper.odap.cf/fbconfig.php');
     //$helper = new FacebookRedirectLoginHelper('http://scrapper.odap.cf/fbconfig.php' );
 try {
   $accessToken = $helper->getAccessToken();
