@@ -38,6 +38,9 @@ session_start();
 function loginredir() {
     window.location="fbconfig.php";
 }
+function () {
+	window.location="logout.php"
+}
 </script>
   </head>
 
@@ -70,6 +73,7 @@ function loginredir() {
 
       <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
+		<div class="span4"><img src="cusatlogo.jpg"></div>      
         <h1>Welcome to CUSAT Open Data Anonymization Project</h1>
         <p> This project is intended to gather data for academic research purposes only. </br> There is no business use of this data.</p>
       </div>
@@ -80,7 +84,7 @@ function loginredir() {
       </div>
       <p>
         
-        <button type="button" class="btn btn-lg btn-primary">Primary</button>
+        <button type="button" class="btn btn-lg btn-primary" onclick="logout()">Log Out</button>
       </p>
       
 
