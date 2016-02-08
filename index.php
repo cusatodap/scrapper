@@ -134,10 +134,10 @@ session_start();
     <script src="../../assets/js/docs.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-    
+  </div>  
     <?php else: ?>   
   <!-- Before login --> 
-	<div class="container">
+	<div class="container theme-showcase">
 	<h1>Login with Facebook</h1>
            Not Connected, please click to 
 	<div> <a href="fbconfig.php">Login with Facebook</a></div>
