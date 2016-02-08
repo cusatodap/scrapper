@@ -45,7 +45,7 @@ function () {
   </head>
 
   <body role="document">
-	<?php if ($_SESSION['FBID']): ?>      <!--  After user login  -->
+	
     <!-- Fixed navbar -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
@@ -68,7 +68,7 @@ function () {
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-
+	<?php if ($_SESSION['FBID']): ?>      <!--  After user login  -->
     <div class="container theme-showcase" role="main">
 
       <!-- Main jumbotron for a primary marketing message or call to action -->
