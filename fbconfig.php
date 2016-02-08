@@ -23,7 +23,7 @@ $fb = new Facebook\Facebook([
   'default_graph_version' => 'v2.5',
 ]);
 // login helper with redirect_uri
-$helper = $fb->getRedirectLoginHelper('http://scrapper.odap.cf/fbconfig.php');
+$helper = $fb->getRedirectLoginHelper();
     //$helper = new FacebookRedirectLoginHelper('http://scrapper.odap.cf/fbconfig.php' );
 try {
   $accessToken = $helper->getAccessToken();
@@ -37,19 +37,56 @@ try {
   exit;
 }
 // see if we have a session
-if ( isset( $session ) ) {
+//echo '<h3>Access Token</h3>';
+//var_dump($accessToken->getValue());
+
+// The OAuth 2.0 client handler helps us manage access tokens
+$oAuth2Client = $fb->getOAuth2Client();
+
+// Get the access token metadata from /debug_token
+$tokenMetadata = $oAuth2Client->debugToken($accessToken);
+//echo '<h3>Metadata</h3>';
+//var_dump($tokenMetadata);
+
+// Validation (these will throw FacebookSDKException's when they fail)
+$tokenMetadata->validateAppId('1687233988161207'); // Replace {app-id} with your app id
+// If you know the user ID this access token belongs to, you can validate it here
+//$tokenMetadata->validateUserId('123');
+$tokenMetadata->validateExpiration();
+
+if (! $accessToken->isLongLived()) {
+  // Exchanges a short-lived access token for a long-lived one
+  try {
+    $accessToken = $oAuth2Client->getLongLivedAccessToken($accessToken);
+  } catch (Facebook\Exceptions\FacebookSDKException $e) {
+    echo "<p>Error getting long-lived access token: " . $helper->getMessage() . "</p>\n\n";
+    exit;
+  }
+
+//  echo '<h3>Long-lived</h3>';
+  //var_dump($accessToken->getValue());
+}
+
+$_SESSION['fb_access_token'] = (string) $accessToken;
+
+// User is logged in with a long-lived access token.
+// You can redirect them to a members-only page.
+//header('Location: https://example.com/members.php');
+//up here
+if ( isset( $_SESSION['fb_access_token'] ) ) {
   // graph api request for user data
   $request = new FacebookRequest(
-  $session,
+  $_SESSION['fb_access_token'],
   'GET',
   '/me',
   array(
-    'fields' => 'id,name,birthday,education,email,political,gender'
+    'fields' => 'id,name,email,religion,political,education,age_range,birthday,hometown'
   )
 );
-  $response = $request->execute();
-  // get response
-  $graphObject = $response->getGraphObject();
+
+$response = $request->execute();
+$graphObject = $response->getGraphObject();
+/* handle the result */
 
      	$fbid = $graphObject->getProperty('id');              // To Get Facebook ID
  	$fbfullname = $graphObject->getProperty('name'); // To Get Facebook full name
@@ -71,7 +108,8 @@ if ( isset( $session ) ) {
 /* ---- header location after session ----*/
   header("Location: index.php");
 } else {
-  $loginUrl = $helper->getLoginUrl(array('redirect_uri' => $fbconfig['appUrl']));
+  $permissions = ['id','name','birthday','education','email','political','gender','hometown']; // Optional permissions
+  $loginUrl = $helper->getLoginUrl('https://scrapper.odap.cf/fbconfig.php',$permissions);
  header("Location: ".$loginUrl);
 }
 ?>
