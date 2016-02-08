@@ -38,7 +38,7 @@ session_start();
 function loginredir() {
     window.location="fbconfig.php";
 }
-function () {
+function logout() {
 	window.location="logout.php"
 }
 </script>
