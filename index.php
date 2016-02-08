@@ -74,7 +74,7 @@ function () {
       <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
 		<div class="span4"><img src="cusatlogo.jpg"></div>      
-        <h1>Welcome to CUSAT Open Data Anonymization Project</h1>
+        <div class="span8"><h1>Welcome to CUSAT Open Data Anonymization Project</h1></div>
         <p> This project is intended to gather data for academic research purposes only. </br> There is no business use of this data.</p>
       </div>
 
@@ -149,7 +149,7 @@ function () {
 	<div class="container theme-showcase">
 	<div class="jumbotron">
 	<div class="span4"><img src="cusatlogo.jpg"></div>
-	<h1>Welcome to CUSAT Open Data Anonymization Project</h1>
+	<div class="span8" ><h1>Welcome to CUSAT Open Data Anonymization Project</h1> </div>
         <p> This project is intended to gather data for academic research purposes only. </br> There is no business use of this data.</p>
 	<h1>Login with Facebook</h1>
            Not Connected, please click to 
