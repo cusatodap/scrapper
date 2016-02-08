@@ -151,7 +151,8 @@ function () {
 	<div class="jumbotron">
 	<div class="row">
 	<div class="col-md-4"><img src="cusatlogo.jpg"></div>
-	<div class="col-md-8" ><h1>Welcome to CUSAT Open Data Anonymization Project</h1> </div> </div>
+	<div class="col-md-8" ><h1>Welcome to CUSAT Open Data Anonymization Project</h1> </div> 
+	</div>
         <p> This project is intended to gather data for academic research purposes only. </br> There is no business use of this data.</p>
 	<h1>Login with Facebook</h1>
            Not Connected, please click to 
