@@ -37,7 +37,7 @@ session_start();
   </head>
 
   <body role="document">
-	<?php if ($_SESSION['FBID']): ?>      <!--  After user login  -->
+	<?php //if ($_SESSION['FBID']): ?>      <!--  After user login  -->
     <!-- Fixed navbar -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
@@ -135,13 +135,13 @@ session_start();
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
   </div>  
-    <?php else: ?>   
+    <?php //else: ?>   
   <!-- Before login --> 
 	<div class="container theme-showcase">
 	<h1>Login with Facebook</h1>
            Not Connected, please click to 
 	<div> <a href="fbconfig.php">Login with Facebook</a></div>
     </div>
-         <?php endif ?>
+         <?php //endif ?>
   </body>
 </html>
