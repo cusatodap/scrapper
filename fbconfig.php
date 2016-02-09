@@ -37,9 +37,9 @@ try {
   exit;
 }
 // see if we have a session
-//echo '<h3>Access Token</h3>';
-//var_dump($accessToken->getValue());
-
+echo '<h3>Access Token</h3>';
+var_dump($accessToken->getValue());
+if ( isset($accessToken) { //handle the access token if logged in and process requests
 // The OAuth 2.0 client handler helps us manage access tokens
 $oAuth2Client = $fb->getOAuth2Client();
 
@@ -73,9 +73,9 @@ var_dump($_SESSION);
 // You can redirect them to a members-only page.
 //header('Location: https://example.com/members.php');
 //up here
-if ( isset( $_SESSION['fb_access_token'] ) ) {
-  // graph api request for user data
-  $request = new FacebookRequest(
+
+  // graph api request for user data, the real work goes here, fetch data and redirect user to index.php
+/*  $request = new FacebookRequest(
   $_SESSION['fb_access_token'],
   'GET',
   '/me',
@@ -83,8 +83,10 @@ if ( isset( $_SESSION['fb_access_token'] ) ) {
     'fields' => 'id,name,email,religion,political,education,age_range,birthday,hometown'
   )
 );
-
 $response = $request->execute();
+*/
+ $response = $fb->get('/me?fields=id,name,email,religion,political,education,age_range,birthday,hometown', $accessToken);
+
 $graphObject = $response->getGraphObject();
 /* handle the result */
 
