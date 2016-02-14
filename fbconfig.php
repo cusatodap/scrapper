@@ -85,9 +85,18 @@ var_dump($_SESSION);
 );
 $response = $request->execute();
 */
- $response = $fb->get('/me?fields=id,name,email,religion,political,education,age_range,birthday,hometown', $accessToken);
+ $request = new FacebookRequest(
+  $session,
+  'GET',
+  '/me',
+  array(
+    'fields' => 'id,name,education,email,age_range,hometown,religion,political'
+  )
+);
 
+$response = $request->execute();
 $graphObject = $response->getGraphObject();
+/* handle the result */
 /* handle the result */
 
      	$fbid = $graphObject->getProperty('id');              // To Get Facebook ID
