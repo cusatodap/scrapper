@@ -84,7 +84,7 @@ $_SESSION['fb_access_token'] = (string) $accessToken;
   )
 );
 $response = $request->execute();
-*/
+*/ echo "Yahan tak to hai";
  $request = new FacebookRequest(
   $accessToken,
   'GET',

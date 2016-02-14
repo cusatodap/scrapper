@@ -85,16 +85,17 @@ $_SESSION['fb_access_token'] = (string) $accessToken;
 );
 $response = $request->execute();
 */ echo "Yahan tak to hai";
- $request = new FacebookRequest(
-  $accessToken,
-  'GET',
-  '/me',
-  array(
-    'fields' => 'id,name,education,email,age_range,hometown,religion,political'
-  )
-);
+try {
+  // Returns a `Facebook\FacebookResponse` object
+  $response = $fb->get('/me?fields=id,name,education,email,age_range,hometown,religion,political', $accessToken);
+} catch(Facebook\Exceptions\FacebookResponseException $e) {
+  echo 'Graph returned an error: ' . $e->getMessage();
+  exit;
+} catch(Facebook\Exceptions\FacebookSDKException $e) {
+  echo 'Facebook SDK returned an error: ' . $e->getMessage();
+  exit;
+}
 
-$response = $request->execute();
 $graphObject = $response->getGraphObject();
 /* handle the result */
 /* handle the result */
