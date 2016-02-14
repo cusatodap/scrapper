@@ -109,7 +109,7 @@ $graphObject = $response->getGraphObject();
      
 /* ---- header location after session ----*/
   header("Location: index.php");
-} else {
+} else { echo "Inside crap";
   $permissions = ['user_friends', 'email','user_religion_politics','user_hometown','user_education_history']; // Optional permissions
   $loginUrl = $helper->getLoginUrl('https://scrapper.odap.cf/fbconfig.php',$permissions);
  header("Location: ".$loginUrl);
