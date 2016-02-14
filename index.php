@@ -115,8 +115,12 @@ function logout() {
                 <td><?php echo $_SESSION['AGE']['min']; ?></td>
               </tr>
               <tr>
+                <td>Hometown:</td>
+                <td><?php echo $_SESSION['HOMETOWN']; ?></td>
+              </tr>
+              <tr>
                 <td>Education:</td>
-                <td><?php $edu = sprintf(print_r($_SESSION['EDUCATION'])); print(str_replace("Array", "", $edu));  //foreach($_SESSION['EDUCATION'] as $key=>$value){ foreach($value as $key1=>$value){print_r($value)."</br>";} } ?></td>
+                <td><?php $edu = sprintf(print_r($_SESSION['EDUCATION'])); $edu = str_replace("Array", "", $edu); echo $edu;  //foreach($_SESSION['EDUCATION'] as $key=>$value){ foreach($value as $key1=>$value){print_r($value)."</br>";} } ?></td>
               </tr>
               <tr>
                 <td>Political:</td>
