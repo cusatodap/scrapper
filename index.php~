@@ -116,7 +116,7 @@ function logout() {
               </tr>
               <tr>
                 <td>Education:</td>
-                <td><?php array_values($_SESSION['EDUCATION']); ?></td>
+                <td><?php array_keys($_SESSION['EDUCATION']); ?></td>
               </tr>
               <tr>
                 <td>Political:</td>
