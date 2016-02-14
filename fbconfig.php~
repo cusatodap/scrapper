@@ -107,7 +107,7 @@ $graphObject = $response->getGraphObject();
 	$feducation = $graphObject->getProperty('education'); //array education
         $fpolitical = $graphObject->getProperty('political');//
         $fgender = $graphObject->getProperty('gender');//
-		$fage = $graphObject->getProperty('ageRange');
+		$fage = $graphObject->getProperty('age_range');
 		$freligion = $graphObject->getProperty('religion');
 	/* ---- Session Variables -----*/
         $_SESSION['FBID'] = $fbid;           
