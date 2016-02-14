@@ -39,7 +39,7 @@ try {
 // see if we have a session
 echo '<h3>Access Token</h3>';
 var_dump($accessToken->getValue());
-if ( isset($accessToken) { //handle the access token if logged in and process requests
+if ( isset($accessToken)) { //handle the access token if logged in and process requests
 // The OAuth 2.0 client handler helps us manage access tokens
 $oAuth2Client = $fb->getOAuth2Client();
 
