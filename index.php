@@ -80,7 +80,7 @@ function logout() {
 
 
       <div class="page-header">
-        <h1>Hi <?php echo $_SESSION['first_name']; ?></h1>
+        <h1>Hi <?php echo $_SESSION['FULLNAME']; ?></h1>
       </div>
       <p>
         
