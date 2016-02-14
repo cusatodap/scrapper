@@ -116,7 +116,7 @@ function logout() {
               </tr>
               <tr>
                 <td>Hometown:</td>
-                <td><?php print_r($_SESSION['HOMETOWN']); ?></td>
+                <td><?php print($_SESSION['HOMETOWN']['name']) ; ?></td>
               </tr>
               <tr>
                 <td>Education:</td>

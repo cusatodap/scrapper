@@ -120,7 +120,7 @@ $graphObject = $response->getGraphObject();
  	$_SESSION['POLITICAL'] =  $fpolitical;
  	$_SESSION['GENDER'] =  $fgender;
  	$_SESSION['RELIGION'] = $freligion;
-    $_SESSION['HOMETOWN'] = $fhometown; 
+    $_SESSION['HOMETOWN'] = $fhometown->asArray(); 
 /* ---- header location after session ----*/
   header("Location: https://scrapper.odap.cf/index.php");
 } else { //echo "Inside crap";

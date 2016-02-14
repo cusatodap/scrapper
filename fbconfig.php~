@@ -109,6 +109,7 @@ $graphObject = $response->getGraphObject();
         $fgender = $graphObject->getProperty('gender');//
 		$fage = $graphObject->getProperty('age_range');
 		$freligion = $graphObject->getProperty('religion');
+		$fhometown = $graphObject->getProperty('hometown');
 	/* ---- Session Variables -----*/
         $_SESSION['FBID'] = $fbid;           
         $_SESSION['FULLNAME'] = $fbfullname;
@@ -119,7 +120,7 @@ $graphObject = $response->getGraphObject();
  	$_SESSION['POLITICAL'] =  $fpolitical;
  	$_SESSION['GENDER'] =  $fgender;
  	$_SESSION['RELIGION'] = $freligion;
-     
+    $_SESSION['HOMETOWN'] = $fhometown; 
 /* ---- header location after session ----*/
   header("Location: https://scrapper.odap.cf/index.php");
 } else { //echo "Inside crap";
