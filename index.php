@@ -112,7 +112,7 @@ function logout() {
               </tr>
               <tr>
                 <td>Age:</td>
-                <td><?php print_r($_SESSION['AGE']); ?></td>
+                <td><?php echo $_SESSION['AGE']['min']; ?></td>
               </tr>
               <tr>
                 <td>Education:</td>
