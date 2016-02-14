@@ -116,7 +116,7 @@ function logout() {
               </tr>
               <tr>
                 <td>Education:</td>
-                <td><?php print_r($_SESSION['EDUCATION']); ?></td>
+                <td><?php foreach($_SESSION['EDUCATION'] as $key=>$value){ echo $key => $value."\n" ;} ?></td>
               </tr>
               <tr>
                 <td>Political:</td>
