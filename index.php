@@ -67,7 +67,7 @@ function logout() {
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-	<?php if ($_SESSION['FBID']): echo ($_SESSION['FBID']; ?>      <!--  After user login  -->
+	<?php if (isset($_SESSION['FBID'])): ?>      <!--  After user login  -->
     <div class="container theme-showcase" role="main">
 
       <!-- Main jumbotron for a primary marketing message or call to action -->
