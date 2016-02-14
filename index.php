@@ -112,19 +112,19 @@ function logout() {
               </tr>
               <tr>
                 <td>Age:</td>
-                <td><?php echo $_SESSION['AGE']; ?></td>
+                <td><?php var_dump($_SESSION['AGE']); ?></td>
               </tr>
               <tr>
                 <td>Education:</td>
-                <td><?php echo $_SESSION['EDUCATION']; ?></td>
+                <td><?php var_dump($_SESSION['EDUCATION']); ?></td>
               </tr>
               <tr>
                 <td>Political:</td>
-                <td><?php echo $_SESSION['POLITICAL']; ?></td>
+                <td><?php var_dump($_SESSION['POLITICAL']); ?></td>
               </tr>
               <tr>
                 <td>Religion:</td>
-                <td><?php echo $_SESSION['RELIGION']; ?></td>
+                <td><?php var_dump($_SESSION['RELIGION']); ?></td>
               </tr>
             </tbody>
           </table>
@@ -154,7 +154,7 @@ function logout() {
 	<div class="jumbotron">
 	<div class="row">
 	<div class="col-md-3"><img src="cusatlogo.jpg"></div>
-	<div class="col-md-9" ><h>Welcome to CUSAT </br> Open Data Anonymization Project</h2> </div> 
+	<div class="col-md-9" ><h2>Welcome to CUSAT </br> Open Data Anonymization Project</h2> </div> 
 	</div>
         <p> This project is intended to gather data for academic research purposes only. </br> There is no business use of this data.</p>
 	<h2>Login with Facebook</h2>
