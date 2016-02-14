@@ -74,7 +74,7 @@ function logout() {
 	<div class="row">      
       <div class="jumbotron">
 		<div class="col-md-3"><img src="cusatlogo.jpg"></div>      
-        <div class="col-md-3"><h1>Welcome to CUSAT </br>Open Data Anonymization Project</h1></div> </div>
+        <div class="col-md-9"><h1>Welcome to CUSAT </br>Open Data Anonymization Project</h1></div> </div>
         <p> This project is intended to gather data for academic research purposes only. </br> There is no business use of this data.</p>
       </div>
 
