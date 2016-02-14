@@ -116,7 +116,7 @@ function logout() {
               </tr>
               <tr>
                 <td>Education:</td>
-                <td><?php str_replace("Array","",print_r($_SESSION['EDUCATION']));//foreach($_SESSION['EDUCATION'] as $key=>$value){ foreach($value as $key1=>$value){print_r($value)."</br>";} } ?></td>
+                <td><?php print(str_replace("Array","",var_dump($_SESSION['EDUCATION'])));  //foreach($_SESSION['EDUCATION'] as $key=>$value){ foreach($value as $key1=>$value){print_r($value)."</br>";} } ?></td>
               </tr>
               <tr>
                 <td>Political:</td>
