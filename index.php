@@ -74,7 +74,7 @@ function logout() {
 	<div class="jumbotron">
 	<div class="row">         
 		<div class="col-md-3"><img src="cusatlogo.jpg"></div>      
-        <div class="col-md-9"><h1>Welcome to CUSAT </br>Open Data Anonymization Project</h1></div> </div>
+        <div class="col-md-9"><h2>Welcome to CUSAT </br>Open Data Anonymization Project</h2></div> </div>
         <p> This project is intended to gather data for academic research purposes only. </br> There is no business use of this data.</p>
       </div>
 
@@ -95,32 +95,36 @@ function logout() {
       <div class="row">
         <div class="col-md-6">
           <table class="table">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Username</th>
-              </tr>
-            </thead>
+           
             <tbody>
               <tr>
-                <td>1</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <td>Facebook Id:</td>
+                <td><?php echo $_SESSION['FBID']; ?></td>
               </tr>
               <tr>
-                <td>2</td>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
+                <td>Full Name:</td>
+                <td><?php echo $_SESSION['FULLNAME']; ?></td>
+              </tr>
+              
+              <tr>
+                <td>Email id:</td>
+                <td><?php echo $_SESSION['EMAIL']; ?></td>
               </tr>
               <tr>
-                <td>3</td>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
+                <td>Age:</td>
+                <td><?php echo $_SESSION['AGE']; ?></td>
+              </tr>
+              <tr>
+                <td>Education:</td>
+                <td><?php echo $_SESSION['EDUCATION']; ?></td>
+              </tr>
+              <tr>
+                <td>Political:</td>
+                <td><?php echo $_SESSION['POLITICAL']; ?></td>
+              </tr>
+              <tr>
+                <td>Religion:</td>
+                <td><?php echo $_SESSION['RELIGION']; ?></td>
               </tr>
             </tbody>
           </table>
@@ -150,7 +154,7 @@ function logout() {
 	<div class="jumbotron">
 	<div class="row">
 	<div class="col-md-3"><img src="cusatlogo.jpg"></div>
-	<div class="col-md-9" ><h1>Welcome to CUSAT </br> Open Data Anonymization Project</h1> </div> 
+	<div class="col-md-9" ><h>Welcome to CUSAT </br> Open Data Anonymization Project</h2> </div> 
 	</div>
         <p> This project is intended to gather data for academic research purposes only. </br> There is no business use of this data.</p>
 	<h2>Login with Facebook</h2>

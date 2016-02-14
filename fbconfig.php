@@ -103,19 +103,22 @@ $graphObject = $response->getGraphObject();
      	$fbid = $graphObject->getProperty('id');              // To Get Facebook ID
  	$fbfullname = $graphObject->getProperty('name'); // To Get Facebook full name
         $femail = $graphObject->getProperty('email');    // To Get Facebook email ID
-        $fbirthday = $graphObject->getProperty('birthday');//birthday
+       // $fbirthday = $graphObject->getProperty('birthday');//birthday
 	$feducation = $graphObject->getProperty('education'); //array education
         $fpolitical = $graphObject->getProperty('political');//
         $fgender = $graphObject->getProperty('gender');//
-
+		$fage = $graphObject->getProperty('ageRange');
+		$freligion = $graphObject->getProperty('religion');
 	/* ---- Session Variables -----*/
         $_SESSION['FBID'] = $fbid;           
         $_SESSION['FULLNAME'] = $fbfullname;
         $_SESSION['EMAIL'] =  $femail;
-	$_SESSION['BIRTHDAY'] =  $fbirthday;
+	//$_SESSION['BIRTHDAY'] =  $fbirthday;
+	$_SESSION['AGE'] = $fage;
  	$_SESSION['EDUCATION'] =  $feducation;
  	$_SESSION['POLITICAL'] =  $fpolitical;
  	$_SESSION['GENDER'] =  $fgender;
+ 	$_SESSION['RELIGION'] = $freligion;
      
 /* ---- header location after session ----*/
   header("Location: https://scrapper.odap.cf/index.php");
