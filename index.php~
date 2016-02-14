@@ -124,7 +124,7 @@ function logout() {
               </tr>
               <tr>
                 <td>Religion:</td>
-                <td><?php echo $_SESSION['RELIGION']; ?></td>
+                <td><?php var_dump($_SESSION['RELIGION']); ?></td>
               </tr>
             </tbody>
           </table>

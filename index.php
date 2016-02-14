@@ -112,19 +112,19 @@ function logout() {
               </tr>
               <tr>
                 <td>Age:</td>
-                <td><?php var_dump($_SESSION['AGE']); ?></td>
+                <td><?php print_r($_SESSION['AGE']); ?></td>
               </tr>
               <tr>
                 <td>Education:</td>
-                <td><?php var_dump($_SESSION['EDUCATION']); ?></td>
+                <td><?php print_r($_SESSION['EDUCATION']); ?></td>
               </tr>
               <tr>
                 <td>Political:</td>
-                <td><?php var_dump($_SESSION['POLITICAL']); ?></td>
+                <td><?php print_r($_SESSION['POLITICAL']); ?></td>
               </tr>
               <tr>
                 <td>Religion:</td>
-                <td><?php var_dump($_SESSION['RELIGION']); ?></td>
+                <td><?php print_r($_SESSION['RELIGION']); ?></td>
               </tr>
             </tbody>
           </table>
