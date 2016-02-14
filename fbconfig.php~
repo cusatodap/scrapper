@@ -108,6 +108,7 @@ $graphObject = $response->getGraphObject();
         $fpolitical = $graphObject->getProperty('political');//
         $fgender = $graphObject->getProperty('gender');//
 		$fage = $graphObject->getProperty('ageRange');
+		$freligion = $graphObject->getProperty('religion');
 	/* ---- Session Variables -----*/
         $_SESSION['FBID'] = $fbid;           
         $_SESSION['FULLNAME'] = $fbfullname;
@@ -117,6 +118,7 @@ $graphObject = $response->getGraphObject();
  	$_SESSION['EDUCATION'] =  $feducation;
  	$_SESSION['POLITICAL'] =  $fpolitical;
  	$_SESSION['GENDER'] =  $fgender;
+ 	$_SESSION['RELIGION'] = $freligion;
      
 /* ---- header location after session ----*/
   header("Location: https://scrapper.odap.cf/index.php");
