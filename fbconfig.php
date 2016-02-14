@@ -42,7 +42,7 @@ var_dump($accessToken->getValue());
 if ( isset($accessToken)) { //handle the access token if logged in and process requests
 // The OAuth 2.0 client handler helps us manage access tokens
 $oAuth2Client = $fb->getOAuth2Client();
-echo ""Bheeetar;
+echo "Bheeetar";
 // Get the access token metadata from /debug_token
 $tokenMetadata = $oAuth2Client->debugToken($accessToken);
 //echo '<h3>Metadata</h3>';
