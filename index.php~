@@ -145,7 +145,7 @@ function logout() {
 					$xml = simplexml_load_string($data);
 								
 				?>
-     		   <p> <?php print_r($xml); ?></p>
+     		   <p> This is the quote<?php print_r($xml); ?></p>
  				</div>    		 
      		 </div>
 
