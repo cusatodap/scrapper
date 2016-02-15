@@ -142,9 +142,10 @@ function logout() {
 					curl_setopt($ch, CURLOPT_URL, $url);
 					$data = curl_exec($ch);
 					curl_close($ch);
-					$xml = simplexml_load_string($data);				
+					$xml = simplexml_load_string($data);
+								
 				?>
-     		   <p> Quote will appear here</p>
+     		   <p> <?php print_r($xml); ?></p>
  				</div>    		 
      		 </div>
 
