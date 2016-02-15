@@ -1,6 +1,19 @@
 {
   "require" : {
     "facebook/php-sdk-v4" : "~5.0",
-    "twbs/bootstrap": "^3.3"
-      }
+    "twbs/bootstrap": "^3.3",
+    "phpclasses/choroscope": ">=1.0.0",
+    "cmfcmf/openweathermap-php-api": "~2.0"
+     },
+  "repositories":
+  [
+    {
+      "type": "composer",
+      "url": "http:\/\/www.phpclasses.org\/"
+    },
+    {
+      "packagist": false
+    }
+  ]
 }
+

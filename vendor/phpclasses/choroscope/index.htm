@@ -1,0 +1,85 @@
+<div style="width:500px;">
+
+<SCRIPT language="JavaScript">
+function createRequestObject(){
+	var request_;
+	var browser = navigator.appName;
+	if(browser == "Microsoft Internet Explorer"){
+		request_ = new ActiveXObject("Microsoft.XMLHTTP");
+	}else{
+		request_ = new XMLHttpRequest();
+	}
+	return request_;
+}
+var http = new Array();
+function getInfo(data,type){
+
+	var curDateTime = new Date();
+	http[curDateTime] = createRequestObject();
+	//alert(data);
+	//alert(type);
+	http[curDateTime].open('get', 'ahoroscope.php?s='+data+'&type='+type);
+
+	http[curDateTime].onreadystatechange = function()
+	{
+		if (http[curDateTime].readyState == 1)
+		{
+			document.getElementById('view').innerHTML = "<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='ajax-loader.gif'>";
+
+		}
+		if (http[curDateTime].readyState == 4)
+		{
+			if (http[curDateTime].status == 200 || http[curDateTime].status == 304)
+			{
+				var response = http[curDateTime].responseText;
+				document.getElementById('view').innerHTML = response;
+			}
+		}
+	}
+
+	http[curDateTime].send(null);
+}
+</SCRIPT>
+<select id="type" onchange="getElementById('s').value = ''; getElementById('s').disabled=false;">
+<option value='' selected>Select Horoscope please</option>
+<option value="daily">Daily Horoscope</option>
+<option value="teen">Daily Teen Horoscope</option>
+<option value="tech">Daily Work Horoscope</option>
+<option value="flirt">Daily Flirt Horoscope</option>
+<option value="single">Daily Sigle Love Horoscope</option>
+<option value="couple">Daily Couple Love Horoscope</option>
+<option value="beauty">Daily Beauty Scope Horoscope</option>
+<option value="slam">Daily Astro Slam Horoscope</option>
+<option value="baby">Daily Baby Scope Horoscope</option>
+<option value="cat">Daily Cat Scope Horoscope</option>
+<option value="dog">Daily Dog Scope Horoscope</option>
+<option value="h_g">Daily Home and Garden Horoscope</option>
+<option value="weekly">Weekly Horoscope</option>
+<option value="wromance">Weekly Romantic Horoscope</option>
+<option value="bus">Weekly Business Horoscope</option>
+<option value="travel">Weekly Travel Horoscope</option>
+<option value="wflirt">Weekly Flirt Horoscope</option>
+<option value="monthly">Monthly Horoscope</option>
+<option value="romance">Monthly Romantic Horoscope</option>
+<option value="career">Monthly Career Horoscope</option>
+<option value="fitness">Monthly Fitness Horoscope</option>
+<option value="year">Yearly Horoscope</option>
+</select><br>
+<select id="s" onchange="getInfo(getElementById('s').value,getElementById('type').value)" disabled>
+<option value='' selected>Select a sign please</option>
+<option value='capricorn'>Capricorn (Dec 22 - Jan 19)</option>
+<option value='aquarius'>Aquarius (Jan 21 - Feb 18)</option>
+<option value='pisces'>Pisces (Feb 19 - Mar 20)</option>
+<option value='aries'>Aries (Mar 21 - Apr 19)</option>
+<option value='taurus'>Taurus (Apr 20 - May 20)</option>
+<option value='gemini'>Gemini (May 21 - June 21)</option>
+<option value='cancer'>Cancer (June 22 - July 22)</option>
+<option value='leo'>Leo (July 23 - Aug 22)</option>
+<option value='virgo'>Virgo (Aug 23 - Sept 22)</option>
+<option value='libra'>Libra (Sept 23 - Oct 22)</option>
+<option value='scorpio'>Scorpio (Oct 23 - Nov 21)</option>
+<option value='sagittarius'>Sagittarius (Nov 22 - Dec 21)</option>
+</select>
+<div id="view">
+</div>
+</div>

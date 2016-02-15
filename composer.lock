@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b7ef81a48537958b6ff51b13528fbd4a",
+    "hash": "1eff66de2d819fbaf4442ea093c73374",
     "packages": [
         {
             "name": "facebook/php-sdk-v4",
@@ -60,6 +60,22 @@
                 "sdk"
             ],
             "time": "2015-11-19 21:07:36"
+        },
+        {
+            "name": "phpclasses/choroscope",
+            "version": "1.0.0",
+            "dist": {
+                "type": "zip",
+                "url": "http://www.phpclasses.org/install/package/choroscope.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "class.ahoroscope.php"
+                ]
+            }
         },
         {
             "name": "twbs/bootstrap",
