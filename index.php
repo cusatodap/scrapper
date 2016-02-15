@@ -147,7 +147,7 @@ function logout() {
 					$xml = simplexml_load_string($data);
 								
 				?>
-     		   <p> <?php print_r($xml); ?></p>
+     		   <p> <?php echo $xml->response['quotes']['quote']; ?></p>
  				</div>    		 
      		 </div>
      		 
