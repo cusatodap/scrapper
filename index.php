@@ -139,12 +139,14 @@ function logout() {
 			<div class="row">         
 				<?php 
 					$ch= curl_init("http://quotes.rest/qod.xml");
+					curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+					//curl_setopt($ch, $option, $value);
 					$data = curl_exec($ch);
 					curl_close($ch);
-					//$xml = simplexml_load_string($data);
+					$xml = simplexml_load_string($data);
 								
 				?>
-     		   <p> <?php ; ?></p>
+     		   <p> <?php print_r($xml); ?></p>
  				</div>    		 
      		 </div>
      		 
