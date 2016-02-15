@@ -144,7 +144,7 @@ function logout() {
 					//$xml = simplexml_load_string($data);
 								
 				?>
-     		   <p> <?php var_dump($data); ?></p>
+     		   <p> <?php ; ?></p>
  				</div>    		 
      		 </div>
      		 
