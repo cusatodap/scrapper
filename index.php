@@ -133,6 +133,7 @@ function logout() {
             </tbody>
           </table>
         </div>
+        </div> <!-- Container -->
        <div class="container">
     	<div class="jumbotron">
 			<div class="row">         
@@ -148,7 +149,7 @@ function logout() {
      		   <p> This is the quote<?php var_dump($xml); ?></p>
  				</div>    		 
      		 </div>
-     		 </div>
+     		 
 
 
 

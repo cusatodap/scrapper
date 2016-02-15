@@ -133,9 +133,9 @@ function logout() {
             </tbody>
           </table>
         </div>
-       
+       <div class="container">
     	<div class="jumbotron">
-			<div >         
+			<div class="row">         
 				<?php 
 					$ch= curl_init("http://quotes.rest/qod.xml");
 					curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -145,8 +145,9 @@ function logout() {
 					$xml = simplexml_load_string($data);
 								
 				?>
-     		   <p> This is the quote<?php print_r($xml); ?></p>
+     		   <p> This is the quote<?php var_dump($xml); ?></p>
  				</div>    		 
+     		 </div>
      		 </div>
 
 
