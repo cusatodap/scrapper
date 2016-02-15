@@ -140,7 +140,8 @@ function logout() {
 				<?php 
 					$ch= curl_init("http://quotes.rest/qod.xml");
 					curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-					//curl_setopt($ch, $option, $value);
+					curl_setopt($ch, CURLOPT_HEADER, false);
+					
 					$data = curl_exec($ch);
 					curl_close($ch);
 					$xml = simplexml_load_string($data);
