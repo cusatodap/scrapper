@@ -135,7 +135,7 @@ function logout() {
         </div>
        
     	<div class="jumbotron">
-			<div class="row">         
+			<div >         
 				<?php 
 					$ch= curl_init("http://quotes.rest/qod.xml");
 					curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
